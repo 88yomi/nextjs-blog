@@ -19,7 +19,7 @@ const Header = () => {
           <Link href="/">
             <span className="cursor-pointer text-4xl font-bold text-white">
               <Link href='/'>
-              Sample Blog
+              Oluwayomi's Blog
               </Link>
             </span>
           </Link>
