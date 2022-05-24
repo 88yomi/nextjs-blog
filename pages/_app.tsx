@@ -2,6 +2,11 @@ import React, { useEffect, useState } from 'react'
 import { Layout } from '../components'
 
 import '../styles/globals.scss'
+
+// import 'swiper/scss'
+// import 'swiper/scss/navigation'
+// import 'swiper/scss/pagination'
+
 import type { AppProps } from 'next/app'
 
 function MyApp({ Component, pageProps }: AppProps) {

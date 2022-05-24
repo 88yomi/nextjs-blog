@@ -13,23 +13,23 @@ export interface QueryResponse {
 		edges: {
 			node: {
 				author: {
-					bio?: string
-					id?: string
-					name?: string
+					bio: string
+					id: string
+					name: string
 					photo: {
-						url?: string
+						url: string
 					}
 				}
-				createdAt?: string
-				title?: string
-				slug?: string
-				excerpt?: string
+				createdAt: string
+				title: string
+				slug: string
+				excerpt: string
 				featuredImage: {
-					url?: string
+					url: string
 				}
 				categories: {
-					name?: string
-					slug?: string
+					name: string
+					slug: string
 				}[]
 			}
 		}[]
@@ -46,16 +46,16 @@ export interface QueryResponseDetails {
 				url: string
 			}
 		}
-		createdAt?: string
-		title?: string
+		createdAt: string
+		title: string
 		slug: string
-		excerpt?: string
+		excerpt: string
 		featuredImage: {
-			url?: string
+			url: string
 		}
 		categories: {
-			name?: string
-			slug?: string
+			name: string
+			slug: string
 		}[]
 		content: {
 			raw?: {
@@ -83,7 +83,7 @@ export interface RecentQueryResponse {
 }
 
 export interface QueryNode {
-	node: QueryResponse['postsConnection']['edges'][]
+	node: QueryResponse['postsConnection']['edges']
 }
 
 export interface GetCategories {
@@ -101,6 +101,59 @@ export interface GetComments {
 	}[]
 }
 
+export interface GetFeaturedPosts {
+	posts: FeaturedPost['post'][]
+}
+
+export interface FeaturedPost {
+	post: {
+		author: {
+			name: string,
+			photo: {
+				url: string
+			}
+		},
+		featuredImage: {
+			url: string
+		},
+		title: string,
+		slug: string,
+		createdAt: string
+	}
+}
+
+export interface GetCategoryPost {
+	postsConnection: {
+		edges: {
+			cursor: string,
+			node: {
+				author: {
+					bio: string,
+					name: string,
+					id: string,
+					photo: {
+						url: string
+					}
+				},
+				createdAt: string,
+				slug: string,
+				title: string,
+				excerpt: string,
+				featuredImage: {
+					url: string,
+				},
+				categories: {
+					name: string,
+					slug: string,
+				}[]
+			}
+		}[]
+	}
+}
+
+export interface CategoryPost {
+	posts: GetCategoryPost['postsConnection']['edges']
+}
 //**  Component Props **
 
 export interface CategoriesProps {
@@ -131,5 +184,4 @@ export interface CommentsProps {
 
 export interface CommentsFormProps {
 	slug: QueryResponseDetails['post']['slug']
-	// slug: string
 }

@@ -22,7 +22,6 @@ const PostDetail: NextPage<PostDetailProps> = ({ post }) => {
     type?: string
   ) => {
     let modifiedText: ({} | string)[] | React.ReactNode = text
-    // console.log(modifiedText)
 
     if (obj) {
       if (obj.bold) {

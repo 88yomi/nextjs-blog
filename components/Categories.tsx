@@ -1,10 +1,16 @@
 import React, { useState, useEffect } from 'react'
+
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 
 import { getCategories } from '../services'
 import { CategoriesProps } from '../interfaces'
 
 const Categories = () => {
+  // const router = useRouter();
+  // const {pathname} = router;
+  // console.log(router)
+    
   const [categories, setCategories] = useState<CategoriesProps[]>([])
 
   useEffect(() => {
